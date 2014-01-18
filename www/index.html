@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<!-- Conditional statement using Window Phone 7 -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <!-- No Cache -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    
+        <meta charset="utf-8">
+        <meta name="description" content="BridgeThing WebApp">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta http-equiv="cleartype" content="on">
+
+        <!-- viewport configuration -->
+        <meta name="viewport" content="width=device-width initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        
+        <title>BridgeThing</title>
+        
+        <!-- App icon -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon"                 href="img/touch/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57"   href="img/touch/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72"   href="img/touch/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76"   href="img/touch/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="img/touch/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="img/touch/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="img/touch/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="img/touch/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="196x196" href="img/touch/apple-touch-icon-152x152.png" />
+        
+        <!-- Customize the Startup Screen -->
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-320x460.png"   media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-640x920.png"   media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-640x1096.png"  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-768x1004.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-748x1024.png"  media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+        <link rel="apple-touch-startup-image" href="img/startup/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+
+        
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- iOS Web App -->
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        
+        <!-- Android Web App -->
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <!-- Define an alternative title for the Home Screen - Only on index.html -->
+        <meta name="apple-mobile-web-app-title" content="BridgeThing">
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/add2home.css"/>
+    
+        <!-- Scripts -->
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+        <script type="text/javascript">
+          function refreshScreenInfo() {
+            $('#infosize').text("Width "+$(window).width() + " / Height "+$(window).height());      
+            $('#infostandalone').text( (window.navigator.standalone!=null?window.navigator.standalone:"not-supported") );
+            document.getElementById("infoorientation").innerHTML = getOrientationText();
+          }  
+        </script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            refreshScreenInfo();
+            /* addToHome.show(true); */   /* Use this for testing only, Should be disabled under normal circumstances. */
+          });
+        </script>
+    </head>
+
+    <body onorientationchange="refreshScreenInfo();">
+    
+        <!-- Top Menu -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">BridgeThing</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                  </ul>
+                </li>
+              </ul>
+              
+              <!-- Login Form -->
+              <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" placeholder="Email" class="form-control" style="width:130px">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" class="form-control" style="width:130px">
+                </div>
+                <a href="home.html" class="btn btn-success">Sign in</a>
+              </form>
+              
+            </div><!--/.navbar-collapse -->
+          </div>
+        </div>
+    
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-4">
+              <h2>Standalone</h2>
+              <div id="infostandalone">
+                <p>Standalone placeholder.</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <h2>Orientation</h2>
+              <div id="infoorientation">
+                <p>Orientation placeholder.</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <h2>Size</h2>
+              <div id="infosize">
+                <p>Size placeholder.</p>
+              </div>
+            </div>
+          </div>
+         
+
+          <script src="js/vendor/zepto.min.js"></script>
+          <script src="js/helper.js"></script>
+          <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+          <script>
+              var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+              (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+              g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+              s.parentNode.insertBefore(g,s)}(document,"script"));
+          </script>
+          
+        </div> <!-- /container -->
+        
+    </body>
+</html>

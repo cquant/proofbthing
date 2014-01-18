@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<!-- Conditional statement using Window Phone 7 -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <!-- No Cache -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    
+        <meta charset="utf-8">
+        <meta name="description" content="BridgeThing Invoices">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta http-equiv="cleartype" content="on">
+        
+        <!-- viewport configuration -->
+        <meta name="viewport" content="width=device-width initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />      
+        
+        <title>BridgeThing Invoices</title>
+        
+        <!-- App icon -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon"                 href="img/touch/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57"   href="img/touch/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72"   href="img/touch/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76"   href="img/touch/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="img/touch/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="img/touch/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="img/touch/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="img/touch/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="196x196" href="img/touch/apple-touch-icon-152x152.png" />
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- iOS Web App -->
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        
+        <!-- Android Web App -->
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <!-- Define an alternative title for the Home Screen - Only on index.html -->
+        <!-- <meta name="apple-mobile-web-app-title" content="BridgeThing"> -->
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        
+        
+        <!-- Scripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+          });
+        </script>        
+    </head>
+
+    <body>
+    
+        <!-- Top Menu -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="home.html">BridgeThing</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invoice <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="invoicesawaiting.html">Awaiting Approval</a></li>
+                    <li><a href="invoicesreceived.html">Received</a></li>
+                    <li><a href="invoicesapproved.html">Approved</a></li>
+                    <li><a href="#">Analysis</a></li>
+                    <li><a href="#">Risk</a></li>
+                  </ul>
+                </li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Vendors</a></li>
+                    <li><a href="#">Matters</a></li>
+                    <li><a href="#">Entities</a></li>
+                  </ul>
+                </li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="index.html">Logout</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+              
+            </div><!--/.navbar-collapse -->
+          </div>
+        </div>
+
+
+          <div class="container">
+          
+            <div class="panel panel-default" style="margin-top:10px">
+              <div class="panel-heading"><h5>Invoices Approved</h5></div>
+              <table class="table table-striped">
+                <tr>
+                  <th>Invoice #</th><th>Company</th><th>Amount</th>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">a1334</a></td><td>Foley's</td><td>$31,233.00</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">b2324397</a></td><td>Wayne Inc</td><td>$12,500.00</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">c387322</a></td><td>Marshall's</td><td>$132,233.32</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">d379793</a></td><td>Guitar Center</td><td>$19,233.43</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">e2324564</a></td><td>Macy's</td><td>$164,129.45</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">g37934</a></td><td>Guitar Center</td><td>$89,278.49</td>
+                </tr>
+                <tr>
+                  <td><a href="invoiceread.html">b233297</a></td><td>Wayne Inc</td><td>$22,000.00</td>
+                </tr>
+              </table>
+              <div class="text-center">
+                <ul class="pagination">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          
+
+        
+
+          <script src="js/vendor/zepto.min.js"></script>
+          <script src="js/helper.js"></script>
+
+          <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+          <script>
+              var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+              (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+              g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+              s.parentNode.insertBefore(g,s)}(document,"script"));
+          </script>
+          
+        </div> <!-- /container -->
+        
+        
+    </body>
+</html>
